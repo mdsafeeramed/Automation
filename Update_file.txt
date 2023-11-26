@@ -8,3 +8,13 @@ pm.test("Verify response body got null after deleting the board", () => {
     pm.expect(resp).to.have.an("object")
     pm.expect(resp._value).to.eql(null)
 });
+
+pm.test("Verify the status, should be ok", () => {
+    pm.response.to.have.status(200)
+});
+
+pm.test("Verify response body got null after deleting the board", () => {
+    const resp = pm.response.json()
+    pm.expect(resp).to.have.an("object")
+    pm.expect(resp._value).to.eql(null)
+});
